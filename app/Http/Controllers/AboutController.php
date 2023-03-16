@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -14,7 +15,10 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $about = About::first();
+        $user = User::first();
+       // dd($about);
+        return view('back.info.update',compact('about','user'));
     }
 
     /**
@@ -35,7 +39,7 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
     }
 
     /**
@@ -69,7 +73,43 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+       // dd($request->all());
+     // $path = $request->file('profile_image')->store('public/images');
+     if($request->hasFile('profile_image')){
+        $file=$request->file('profile_image');
+        $extention=$file->getClientOriginalExtension();
+        $fileName=time().'.'.$extention;
+        $file->move('images',$fileName);
+        $about->profile_image =$fileName;
+     }
+     if($request->hasFile('cover_image')){
+        $file=$request->file('cover_image');
+        $extention=$file->getClientOriginalExtension();
+        $fileName=time().'.'.$extention;
+        $file->move('images',$fileName);
+        $about->cover_image =$fileName;
+     }
+     if($request->hasFile('pdf')){
+        $file=$request->file('pdf');
+        $extention=$file->getClientOriginalExtension();
+        $fileName=time().'.'.$extention;
+        $file->move('images',$fileName);
+        $about->pdf =$fileName;
+     }
+     if(isset($request->name)){
+        $user = $user = User::first();
+        $user->name = $request->name;
+        $user->save();
+     }
+
+      $about->position = $request->position;
+      $about->des = $request->des;
+     // $about->profile_image =$fileName;
+    
+     // $data->profile_image  = $path;
+     //dd($about);
+      $about->save();
+      return redirect()->back();
     }
 
     /**

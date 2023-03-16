@@ -12,7 +12,11 @@
 	<link rel="stylesheet" href="{{asset('front/assets/css/johndoe.css')}}">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a>
+    @php
+   $user = App\Models\User::first();
+   $about = App\Models\About::first();
+@endphp
+    <a href="{{route('login')}}" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Admin Panel</a>
     @include('front.home')
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
         <div class="container">
@@ -32,7 +36,11 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav brand">
+                    @if(!isset($about->profile_image))
                     <img src="front/assets/imgs/avatar.jpg" alt="" class="brand-img">
+                    @else
+                    <img src="{{asset('images/'.$about->profile_image)}}" alt="" class="brand-img">
+                    @endif
                     <li class="brand-txt">
                         <h5 class="brand-title">John Doe</h5>
                         <div class="brand-subtitle">Web Designer | Developer</div>
