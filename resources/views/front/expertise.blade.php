@@ -11,17 +11,14 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        @foreach (DB::table('expertises')->get() as $data)
                         <h6 class="title text-danger">2017 - Present</h6>
-                        <P>UX Developer</P>
-                        <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!.</P>
-                        <hr>
-                        <h6 class="title text-danger">2016 - 2017</h6>
-                        <P>Front-end Developer</P>
-                        <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!.</P>
-                        <hr>
-                        <h6 class="title text-danger">2015 - 2016</h6>
-                        <P>UX Designer</P>
-                        <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!.</P>
+                        <P>{{$data->title}}</P>
+                        <P class="subtitle">{{$data->des}}.</P>
+                        <hr> 
+                        @endforeach
+                       
+                       
                     </div>
                 </div>
             </div>
@@ -34,18 +31,12 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        @foreach (DB::table('education')->get() as $data)
                         <h6 class="title text-danger">2017 - Present</h6>
                         <P>B.E Computer Engineering</P>
                         <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error corrupti recusandae obcaecati odit repellat ducimus cum, minus tempora aperiam at.</P>
                         <hr>
-                        <h6 class="title text-danger">2016 - 2017</h6>
-                        <P>Diploma in Computer Engineering</P>
-                        <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, id officiis quas placeat quia voluptas dolorum rem animi nostrum quae.aliquid repudiandae saepe!.</P>
-                        <hr>
-                        <h6 class="title text-danger">2015 - 2016</h6>
-                        <P>High School Degree</P>
-                        <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!.</P>
-                        
+                        @endforeach 
                     </div>
                 </div>
             </div>

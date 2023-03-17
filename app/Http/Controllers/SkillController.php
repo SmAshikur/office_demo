@@ -14,7 +14,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.Skill.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.Skill.create');
     }
 
     /**

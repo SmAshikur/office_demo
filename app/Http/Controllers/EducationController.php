@@ -14,7 +14,7 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.Education.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class EducationController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.Education.create');
     }
 
     /**
@@ -35,7 +35,11 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $expertise = new Education();
+        $expertise->title = $request->title ;
+        $expertise->des= $request->des;
+        $expertise->save();
+        return redirect()->back();
     }
 
     /**

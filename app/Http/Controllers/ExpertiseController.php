@@ -14,7 +14,7 @@ class ExpertiseController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.Expertise.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ExpertiseController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.Expertise.create');
     }
 
     /**
@@ -35,7 +35,12 @@ class ExpertiseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $expertise = new Expertise();
+        $expertise->title = $request->title ;
+        $expertise->des= $request->des;
+        $expertise->save();
+        return redirect()->back();
     }
 
     /**

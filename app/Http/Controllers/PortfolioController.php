@@ -14,7 +14,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.Portfolio.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.Portfolio.create');
     }
 
     /**

@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ExpertiseController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +30,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('dashboard')->group(function () {
     Route::resource('/about', AboutController::class);
+    Route::resource('/expertise', ExpertiseController::class);
+    Route::resource('/skill', SkillController::class);
+    Route::resource('/education', EducationController::class);
+    Route::resource('/service', ServiceController::class);
+    Route::resource('/portfolio', PortfolioController::class);
 });
 // Route::resource('user', UserController::class);
 // Route::resource('user', UserController::class);
