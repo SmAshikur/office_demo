@@ -3,46 +3,56 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <form action="" method="POST" enctype="multipart/form-data">@csrf @method('PUT')
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" name="name" id="title" >
+            <div class="row mb-5 pt-5">
+                <h3>Create New Skill</h3>
+           </div>
+            <div class="row">
+                <div class="col px-5">
+                    <form action="{{route('skill.store')}}" method="POST" enctype="multipart/form-data">@csrf 
+                        <div class="form-group">
+                            <label>Skill Name </label>
+                            <input type="text" class="form-control" name="title" id="title" >
+                        </div>
+                        <div class="form-group">
+                            <label>Percentage </label>
+                            <input type="text" class="form-control" name="percent" id="title" >
+                        </div>
+                        <div class="form-group">
+                            <label> </label>
+                            <input type="hidden" class="form-control" name="skill_or_lang" id="title" value="skill" >
+                        </div>
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label>Designition</label>
-                    <input type="text" class="form-control" name="position" id="title" >
+            </div>
+        </div>
+        <div class="col">
+            <div class="row mb-5 pt-5">
+                <h3>Add New Language Skill</h3>
+           </div>
+            <div class="row">
+                <div class="col px-5">
+                    <form action="{{route('skill.store')}}" method="POST" enctype="multipart/form-data">@csrf 
+                        <div class="form-group">
+                            <label>Language Name </label>
+                            <input type="text" class="form-control" name="title" id="title" >
+                        </div>
+                        <div class="form-group">
+                            <label>Percentage </label>
+                            <input type="text" class="form-control" name="percent" id="title" >
+                        </div>
+                        <div class="form-group">
+                            <label> </label>
+                            <input type="hidden" class="form-control" name="skill_or_lang" id="title" value="lan" >
+                        </div>
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea type="text" class="form-control" name="des" rows="3" cols="3"></textarea>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label>Cover Image</label>
-                        <input type="file" class="form-control" name="cover_image" id="title">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{asset('images/')}}" style="height:100px;">
-                    </div>
-
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label>Profile Image</label>
-                        <input type="file" class="form-control" name="profile_image" id="profile_image ">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{asset('images/')}}" style="height:100px;">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Resume</label>
-                    <input type="file" class="form-control" name="pdf" id="title">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

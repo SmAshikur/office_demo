@@ -35,7 +35,21 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $portfolio = new Portfolio();
+        $portfolio->title=$request->title;
+        $portfolio->cat =$request->cat;
+        $portfolio->sub_title=$request->sub_title;
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $extention=$file->getClientOriginalExtension();
+            $fileName=time().'.'.$extention;
+            $file->move('images',$fileName);
+            $portfolio->image =$fileName;
+         }
+       // dd($portfolio);
+        $portfolio->save();
+        return redirect()->back();
     }
 
     /**

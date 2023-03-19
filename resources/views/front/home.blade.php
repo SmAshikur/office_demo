@@ -1,4 +1,8 @@
-<header class="header">
+<header class="header" style="
+    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{asset('images/'.$about->profile_image)}});
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{asset('images/'.$about->profile_image)}});
+">
+{{-- front/assets/imgs/header.jpg --}}
     <div class="container">
         <div class="row">
             <div class="col-md-3 offset-md-9">

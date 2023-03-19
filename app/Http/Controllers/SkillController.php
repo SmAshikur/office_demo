@@ -35,7 +35,12 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $skill = new Skill();
+        $skill->title=$request->title;
+        $skill->percent =$request->percent;
+        $skill->skill_or_lang=$request->skill_or_lang;
+        $skill->save();
+        return redirect()->back();
     }
 
     /**

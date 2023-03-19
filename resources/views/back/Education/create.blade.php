@@ -25,7 +25,17 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>From*</label>
+                        <input type="date" class="form-control" name="from" id="title" required>
+                    </div>
 
+                    <div class="form-group col">
+                        <label>To</label>
+                        <input type="date" class="form-control" name="to" id="title" >
+                    </div>
+               </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

@@ -17,6 +17,7 @@ class CreateSkillsTable extends Migration
             $table->id();
             $table->string('title');
             $table->integer('percent')->nullable();
+            $table->string('skill_or_lang');
             $table->timestamps();
         });
     }

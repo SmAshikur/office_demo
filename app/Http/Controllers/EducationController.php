@@ -35,9 +35,12 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
+       // dd($request->all());
         $expertise = new Education();
         $expertise->title = $request->title ;
         $expertise->des= $request->des;
+        $expertise->from= $request->from;
+        $expertise->to= $request->to;
         $expertise->save();
         return redirect()->back();
     }

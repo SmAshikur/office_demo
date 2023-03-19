@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="card mb-5">
-                   <div class="card-header has-icon">
+                   <div class="card-header has-icon"> 
                         <i class="ti-support text-danger" aria-hidden="true"></i>
                     </div>
                     <div class="card-body px-4 py-3">

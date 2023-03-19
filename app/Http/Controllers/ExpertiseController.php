@@ -39,7 +39,11 @@ class ExpertiseController extends Controller
         $expertise = new Expertise();
         $expertise->title = $request->title ;
         $expertise->des= $request->des;
+        $expertise->from= $request->from;
+        $expertise->to= $request->to;
+      //  dd($expertise);
         $expertise->save();
+
         return redirect()->back();
     }
 
