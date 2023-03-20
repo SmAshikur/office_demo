@@ -17,10 +17,16 @@ class CreateAboutsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('position')->nullable();
+            $table->string('sub_position')->nullable();
             $table->string('des')->nullable();
             $table->string('pdf')->nullable();
             $table->string('cover_image')->nullable();
             $table->string('profile_image')->nullable();
+            //info
+            $table->string('dob')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('skype')->nullable();
             $table->timestamps();
         });
     }

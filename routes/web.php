@@ -8,7 +8,7 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioController;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +35,7 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/education', EducationController::class);
     Route::resource('/service', ServiceController::class);
     Route::resource('/portfolio', PortfolioController::class);
+    Route::resource('/contact', ContactController::class);
 });
 // Route::resource('user', UserController::class);
 // Route::resource('user', UserController::class);

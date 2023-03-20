@@ -73,7 +73,7 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-       // dd($request->all());
+       //dd($request->all());
      // $path = $request->file('profile_image')->store('public/images');
      if($request->hasFile('profile_image')){
         $file=$request->file('profile_image');
@@ -90,24 +90,22 @@ class AboutController extends Controller
         $about->cover_image =$fileName;
      }
      if($request->hasFile('pdf')){
-        $file=$request->file('pdf');
-        $extention=$file->getClientOriginalExtension();
-        $fileName=time().'.'.$extention;
-        $file->move('images',$fileName);
-        $about->pdf =$fileName;
+        $path = $request->file('pdf')->store('public/files');
+        $about->pdf = $path;
      }
      if(isset($request->name)){
-        $user = $user = User::first();
+        $user = User::first();
         $user->name = $request->name;
         $user->save();
      }
 
-      $about->position = $request->position;
+     $about->position = $request->position;
+     $about->sub_position = $request->sub_position;
+     $about->skype = $request->skype;
+     $about->address = $request->address;
+     $about->phone = $request->phone;
+     $about->dob = $request->dob;
       $about->des = $request->des;
-     // $about->profile_image =$fileName;
-    
-     // $data->profile_image  = $path;
-     //dd($about);
       $about->save();
       return redirect()->back();
     }

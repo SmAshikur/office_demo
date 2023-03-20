@@ -33,11 +33,12 @@
                     </li>
                     <li class="nav-item">
                         <a href="#resume" class="nav-link">Resume</a>
+                        {{-- Resume :<b><a href="{{Storage::url($about->pdf)}}">Resume</a></b> --}}
                     </li>
                 </ul>
                 <ul class="navbar-nav brand">
                     @if(!isset($about->profile_image))
-                    <img src="front/assets/imgs/avatar.jpg" alt="" class="brand-img">
+                    <img src="{{asset('front/assets/imgs/avatar.jpg')}}" alt="" class="brand-img">
                     @else
                     <img src="{{asset('images/'.$about->profile_image)}}" alt="" class="brand-img">
                     @endif
@@ -118,7 +119,7 @@
 
     @include('front.service')
 
-    <section class="section bg-custom-gray" id="price">
+    {{-- <section class="section bg-custom-gray" id="price">
         <div class="container">
             <h1 class="mb-5"><span class="text-danger">Packs</span> Pricing</h1>
             <div class="row align-items-center">
@@ -192,7 +193,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="section bg-dark py-5">
         <div class="container text-center">
             <h2 class="text-light mb-5 font-weight-normal">I Am Available For FreeLance</h2>
@@ -204,7 +205,7 @@
     @include('front.portfolio')
     <!-- End of portfolio section -->
 
-   @include('front.blog')
+   {{-- @include('front.blog') --}}
 
    @include('front.contact')
     <footer class="footer py-3">

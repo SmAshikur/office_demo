@@ -3,10 +3,10 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <form action="" method="POST" enctype="multipart/form-data">@csrf @method('PUT')
+            <form action="{{route('service.store')}}" method="POST" enctype="multipart/form-data">@csrf 
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" name="name" id="title" >
+                    <input type="text" class="form-control" name="title" id="title" >
                 </div>
                 <div class="form-group">
                     <label>Description</label>

@@ -7,7 +7,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         @if(!isset($about->profile_image))
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('back/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       @else
       <img src="{{asset('images/'.$about->profile_image)}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       @endif
@@ -20,7 +20,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           @if(!isset($about->profile_image))
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('back/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
           @else 
           <img src="{{asset('images/'.$about->profile_image)}}" class="img-circle elevation-2" alt="User Image">
           @endif

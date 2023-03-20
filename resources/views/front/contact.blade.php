@@ -5,15 +5,15 @@
             <div class="col-lg-8">
                 <div class="contact-form-card">
                     <h4 class="contact-title">Send a message</h4>
-                    <form action="">
+                    <form action="{{route('contact.store')}}" method="POST">@csrf
                         <div class="form-group">
-                            <input  class="form-control" type="text" placeholder="Name *" required>
+                            <input  class="form-control" type="text" placeholder="Name *" name="name" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Email *" required>
+                            <input class="form-control" type="email" placeholder="Email *" name="email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id=" placeholder="Message *" rows="7" required></textarea>
+                            <textarea class="form-control" placeholder="Message *" rows="7" name="message" required></textarea>
                         </div>
                         <div class="form-group ">
                             <button type="submit" class="form-control btn btn-primary" >Send Message</button>

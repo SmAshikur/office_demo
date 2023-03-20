@@ -12,7 +12,10 @@
                     </div>
                     <div class="card-body">
                         @foreach (DB::table('expertises')->get() as $data)
-                        <h6 class="title text-danger">2017 - Present</h6>
+                        <h6 class="title text-danger">
+                           @if(isset($data->from)) {{date('Y', strtotime($data->from))??''}} @endif - 
+                           @if(isset($data->to)) {{date('Y', strtotime($data->to))}} @else Present @endif
+                        </h6>
                         <P>{{$data->title}}</P>
                         <P class="subtitle">{{$data->des}}.</P>
                         <hr> 
@@ -32,7 +35,10 @@
                     </div>
                     <div class="card-body">
                         @foreach (DB::table('education')->get() as $data)
-                        <h6 class="title text-danger">2017 - Present</h6>
+                        <h6 class="title text-danger">
+                            @if(isset($data->from)) {{date('Y', strtotime($data->from))??''}} @endif - 
+                            @if(isset($data->to)) {{date('Y', strtotime($data->to))}} @else Present @endif
+                        </h6>
                         <P>{{$data->title}}</P>
                         <P class="subtitle">{{$data->des}}</P>
                         <hr>

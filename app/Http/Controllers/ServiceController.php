@@ -35,7 +35,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service= new Service();
+        $service->title=$request->title;
+        $service->des=$request->des;
+        if($request->hasFile('icon')){
+            $file=$request->file('icon');
+            $extention=$file->getClientOriginalExtension();
+            $fileName=time().'.'.$extention;
+            $file->move('images',$fileName);
+            $service->icon =$fileName;
+         }
+         $service->save();
+         //dd($service);
+         return redirect()->back();
     }
 
     /**
